@@ -1,0 +1,145 @@
+SQL Notes Date: 11-07-2026
+
+NOTE
+
+*SQL*
+1. SQL stands for the Structured Query Language 
+3. it is a language that is used to communicate with the database 
+
+----------------------------------------------------------------------------
+
+*Database*  
+1. It is a place or medium that is used to store data in a systematic and
+organised manner
+
+2. Data is a raw fact that describes the properties of an object's physical existence 
+
+____________________
+properties |  data  |
+uniform:   |  white |
+school:    |  ABC   | 
+Age:       |  12    |
+STD:       |  5th   |
+Roll No:   |  102   |
+___________|________|
+
+----------------------------------------------------------------------------
+
+*DBMS*
+1. DBMS stands for database management system 
+2. It's a software that is used to maintain and manage the database 
+3. DBMS provides two important features
+     1. Security 
+     2. authorization (ex: OTP)
+4. DBMS stores data in a file format.
+5. DBMS uses a query language to communicate with the database 
+
+----------------------------------------------------------------------------
+
+*RDBMS*
+
+1. RDMS stands for relational database management system 
+2. It is software that is used to maintain and manage the database 
+3. RDBMS  provides two important features
+     1. Security 
+     2. authorization (ex: OTP)
+4. RDBMS stores data in a table format 
+5. RDMS uses a Structured Query Language to communicate with the database 
+
+----------------------------------------------------------------------------
+differences between DBMS and RDBMS
+
+C=> Create/insert
+R=> Read/Retrieve
+U=> Update/Modify 
+D=> Delete/Drop
+
+
+____________________________________________________________________________
+DBMS                               |                   RDBMS
+                                   | 
+1. DBMS stands for database        |1. RDMS stands for relational database 
+   management system.              |   Management system
+2. It's a software that is used    |2. It is software that is used to 
+   to maintain and manage the      |   maintain and manage the database
+   database                        |
+3. DBMS provides two important     |3.RDBMS  provides two important
+   features                        |  features
+     1. Security                   |   1. Security 
+     2. authorization (ex: OTP)    |   2. authorization (ex: OTP)
+4. DBMS stores data in a file      |4. RDBMS stores data in a table format
+   format.                         |
+5. DBMS uses a query language to   |5. RDMS uses a Structured Query Language
+   communicate with the database   |   to communicate with the database 
+6. In DBMS takes more storage      |6. RDMS takes less storage 
+7. CRUD is difficult to perform in |7. CRUD operations are easy to use in 
+   DBMS                            |   RDMS
+____________________________________________________________________________
+
+
+----------------------------------------------------------------------------
+RDBMS
+1. DR. Edgar Frank Codd invented the RDBMS 
+        
+         Colum
+__________________
+       |           | Row 
+_______|___________|
+
+
+1. column also called  as attribute
+2. ROW is also called a record and a tuple 
+3. A cell is the smallest unit of the table 
+4. E.F.Codd four Rules
+   1. Data entered into the cell must be a single value data 
+
+_________________________________________
+SID     |  Student name |    Ph_no       |     
+101     |      A        |    111,112     |
+102     |      B        |     121        |
+
+Case 1:
+1. Retrieve
+2. modify
+3. Delete 
+
+    2. In an RDBMS, we can store everything in the table, including metadata 
+
+_________________________________________
+SID     |  Student name |    photo       |  
+101     |      A        |    111.jpg     |
+102     |      B        |    121.jpg     |
+________|_______________|________________|
+
+* Meta data store in meta table  
+_________________________________________
+Date    |   location    |    format      |  
+101     |      A        |    111.jpg     |
+102     |      B        |    121.jpg     |
+________|_______________|________________|
+
+
+    3. In RDBMS, we can create multiple tables if needed; 
+       We have to establish a connection between  them by 
+       using key attributes. 
+
+_________________________________________
+SID     |  Student name |    photo       |  
+101     |      A        |    111.jpg     |
+102     |      B        |    121.jpg     |
+________|_______________|________________|
+
+_________________________________________
+SID     |   Student     |    Subject     |  
+101     |      A        |      SQL       |
+102     |      B        |     Python     |
+________|_______________|________________|
+
+     4. Data entered into a cell must be validated in two steps: 
+               1. By assigning data types
+               2. By assigning constants 
+
+
+
+
+
