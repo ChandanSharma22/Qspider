@@ -1,43 +1,45 @@
-
+#kbc game program
 def welcome(name):
     print(f"{name} kbc me apka swagat hai\n")
 
 def rules():
-    print("""1)you have 7 question
+    print("""
+     -------RULES OF THE GAME------
+     1)you have 7 question
      2)you have 4 option
-     3)if your choice is correct you get the price """ )
+     3)if your choice is correct you get the price \n\n""" )
 
 def question_bank():
     price=0
-    q1="1)how mush golas has ronaldo scored till now\na)300\tb)983\nc)321\td)42"
+    q1="1)how mush golas has ronaldo scored till now\na)300\tb)983\nc)321\td)42\n"
     ans1="b"
     price=ask_question(q1,ans1,price)
     if price==-1:
         return print("you failed\n")
     print(f"your choice is correct you have won {price}")
 
-    q2="2)how many days in a leap year\na)365\tb)364\nc)366\td)367"
+    q2="2)how many days in a leap year\na)365\tb)364\nc)366\td)367\n"
     ans2="c"
     price=ask_question(q2,ans2,price)
     if price==-1:
         return print("you failed\n")
     print(f"your choice is correct you have won {price}")
 
-    q3="3)which city is called the 'pink city'\na)kerala\tb)jaipur\nc)mumbai\td)c"
+    q3="3)which city is called the 'pink city'\na)kerala\tb)jaipur\nc)mumbai\td)c\n"
     ans3="b"
     price=ask_question(q3,ans3,price)
     if price==-1:
         return print("you failed\n")
     print(f"your choice is correct you have won {price}")
 
-    q4="4)largest river in the world \na) amazon \tb)neil \nc)ganga \td)yamuna"
+    q4="4)largest river in the world \na) amazon \tb)neil \nc)ganga \td)yamuna\n"
     ans4="a"
     price=ask_question(q4,ans4,price)
     if price==-1:
         return print("you failed\n")
     print(f"your choice is correct you have won {price}")
 
-    q5="5)smallest country \na)india \tb) austrailia\nc)vatican\td) kerala"
+    q5="5)smallest country \na)india \tb) austrailia\nc)vatican\td) kerala\n"
     ans5="c"
     price=ask_question(q5,ans5,price)
     if price==-1:
