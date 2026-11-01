@@ -1,69 +1,165 @@
-#kbc game program
+
 def welcome(name):
-    print(f"{name} kbc me apka swagat hai\n")
+    print(f"\nNamaste {name}! KBC mein aapka swagat hai.\n")
+
 
 def rules():
     print("""
-     -------RULES OF THE GAME------
-     1)you have 7 question
-     2)you have 4 option
-     3)if your choice is correct you get the price \n\n""" )
+========== RULES OF THE GAME ==========
+
+1. Game mein total 7 questions hain.
+2. Har question mein 4 options hain (a, b, c, d).
+3. Har correct answer par prize money milegi.
+4. Wrong answer dene par game end ho jayega.
+5. Answer dene ke liye a, b, c ya d enter karein.
+
+=======================================
+""")
+
+
+def ask_question(question, options, correct_answer, prize):
+    print("\n" + question)
+
+    for option, answer in options.items():
+        print(f"{option}) {answer}")
+
+    while True:
+        user_answer = input("Apna answer enter karein (a/b/c/d): ")
+        user_answer = user_answer.strip().lower()
+
+        if user_answer in options:
+            break
+        else:
+            print("Invalid option! Please a, b, c ya d enter karein.")
+
+    if user_answer == correct_answer:
+        print(f"\nCorrect answer! Aapne Rs. {prize:,} jeete! 🎉")
+        return True
+    else:
+        print(f"\nWrong answer! Sahi answer hai: {correct_answer}) "
+              f"{options[correct_answer]}")
+        return False
+
 
 def question_bank():
-    price=0
-    q1="1)how mush golas has ronaldo scored till now\na)300\tb)983\nc)321\td)42\n"
-    ans1="b"
-    price=ask_question(q1,ans1,price)
-    if price==-1:
-        return print("you failed\n")
-    print(f"your choice is correct you have won {price}")
+    questions = [
+        {
+            "question": "1. Leap year mein kitne din hote hain?",
+            "options": {
+                "a": "365",
+                "b": "364",
+                "c": "366",
+                "d": "367"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "2. Pink City kise kaha jata hai?",
+            "options": {
+                "a": "Mumbai",
+                "b": "Jaipur",
+                "c": "Delhi",
+                "d": "Pune"
+            },
+            "answer": "b"
+        },
+        {
+            "question": "3. Duniya ka sabse chhota desh kaun sa hai?",
+            "options": {
+                "a": "India",
+                "b": "Nepal",
+                "c": "Vatican City",
+                "d": "Bhutan"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "4. Solar System mein kitne planets hain?",
+            "options": {
+                "a": "7",
+                "b": "8",
+                "c": "9",
+                "d": "10"
+            },
+            "answer": "b"
+        },
+        {
+            "question": "5. Python kya hai?",
+            "options": {
+                "a": "Programming language",
+                "b": "Operating system",
+                "c": "Web browser",
+                "d": "Database"
+            },
+            "answer": "a"
+        },
+        {
+            "question": "6. Ek week mein kitne din hote hain?",
+            "options": {
+                "a": "5",
+                "b": "6",
+                "c": "7",
+                "d": "8"
+            },
+            "answer": "c"
+        },
+        {
+            "question": "7. HTML ka full form kya hai?",
+            "options": {
+                "a": "HighText Machine Language",
+                "b": "HyperText Markup Language",
+                "c": "HyperTool Markup Language",
+                "d": "HomeText Makeup Language"
+            },
+            "answer": "b"
+        }
+    ]
 
-    q2="2)how many days in a leap year\na)365\tb)364\nc)366\td)367\n"
-    ans2="c"
-    price=ask_question(q2,ans2,price)
-    if price==-1:
-        return print("you failed\n")
-    print(f"your choice is correct you have won {price}")
+    total_prize = 0
 
-    q3="3)which city is called the 'pink city'\na)kerala\tb)jaipur\nc)mumbai\td)c\n"
-    ans3="b"
-    price=ask_question(q3,ans3,price)
-    if price==-1:
-        return print("you failed\n")
-    print(f"your choice is correct you have won {price}")
+    for index, question in enumerate(questions):
+        prize = (index + 1) * 100000
 
-    q4="4)largest river in the world \na) amazon \tb)neil \nc)ganga \td)yamuna\n"
-    ans4="a"
-    price=ask_question(q4,ans4,price)
-    if price==-1:
-        return print("you failed\n")
-    print(f"your choice is correct you have won {price}")
+        is_correct = ask_question(
+            question["question"],
+            question["options"],
+            question["answer"],
+            prize
+        )
 
-    q5="5)smallest country \na)india \tb) austrailia\nc)vatican\td) kerala\n"
-    ans5="c"
-    price=ask_question(q5,ans5,price)
-    if price==-1:
-        return print("you failed\n")
-    print(f"your choice is correct you have won {price}\n")
-    print(f"\nYou won the game{name}")
-    
+        if not is_correct:
+            print("\nGame Over! Better luck next time.")
+            break
 
-def ask_question(question,answer,current_price):
-    print(question)
-    ans=input("enter your answer\n")
-    if ans==answer:
-        current_price+=10000000
-        return current_price
+        total_prize = prize
+        print(f"Your total winning: Rs. {total_prize:,}")
+
     else:
-        return -1
+        print("\nCongratulations! Aapne saare questions sahi answer kiye! 🏆")
 
-print("-----Welcome---\n")
-name=input("enter your name:")
+    print(f"\n{name}, aapki final winning amount: Rs. {total_prize:,}")
+
+
+# Main program
+print("========== WELCOME TO KBC ==========")
+
+name = input("Apna naam enter karein: ").strip()
+
+if not name:
+    name = "Player"
+
 welcome(name)
-choice=input("Are you redy to start (y/n)")
-if choice=="n":
-    print("Thank you for plaing")
-    
-elif choice=="y":
-    rules()
-    question_bank()
+rules()
+
+while True:
+    choice = input("Kya aap game start karna chahte hain? (y/n): ")
+    choice = choice.strip().lower()
+
+    if choice == "y":
+        question_bank()
+        break
+    elif choice == "n":
+        print("KBC khelne ke liye dhanyavaad!")
+        break
+    else:
+        print("Please sirf y ya n enter karein.")
